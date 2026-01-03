@@ -1,6 +1,6 @@
 # GroceryLocatorHackRU25
 
-A Flask web application that helps users find the cheapest grocery items at nearby stores by zipcode.
+A MVP Flask web application that helps users find the cheapest grocery items at nearby stores by zipcode created during the HackRU 2025 24-hour hackathon at Rutgers University.
 
 ## Setup Instructions
 
