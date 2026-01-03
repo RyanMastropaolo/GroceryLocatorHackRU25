@@ -1,4 +1,4 @@
-# New-HackRU
+# GroceryLocatorHackRU25
 
 A Flask web application that helps users find the cheapest grocery items at nearby stores by zipcode.
 
