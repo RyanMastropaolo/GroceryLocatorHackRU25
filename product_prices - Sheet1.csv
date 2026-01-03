@@ -1,0 +1,55 @@
+storeID,item,Store Name,price
+1,Milk,ShopRite of East Brunswick,2.99
+2,Milk,ACME Markets,3.09
+3,Milk,Wegmans,3.29
+4,Milk,ShopRite of Newark,2.89
+5,Milk,ALDI,2.79
+6,Milk,Key Food Supermarket,2.99
+7,Milk,ShopRite of Camden,2.89
+8,Milk,ALDI,2.69
+9,Milk,Save-A-Lot,2.79
+1,Banana,ShopRite of East Brunswick,0.59
+2,Banana,ACME Markets,0.55
+3,Banana,Wegmans,0.69
+4,Banana,ShopRite of Newark,0.58
+5,Banana,ALDI,0.49
+6,Banana,Key Food Supermarket,0.59
+7,Banana,ShopRite of Camden,0.6
+8,Banana,ALDI,0.55
+9,Banana,Save-A-Lot,0.58
+1,Avocado,ShopRite of East Brunswick,1.49
+2,Avocado,ACME Markets,1.59
+3,Avocado,Wegmans,1.79
+4,Avocado,ShopRite of Newark,1.69
+5,Avocado,ALDI,1.29
+6,Avocado,Key Food Supermarket,1.59
+7,Avocado,ShopRite of Camden,1.69
+8,Avocado,ALDI,1.49
+9,Avocado,Save-A-Lot,1.59
+1,Chicken Breast,ShopRite of East Brunswick,3.99
+2,Chicken Breast,ACME Markets,4.29
+3,Chicken Breast,Wegmans,4.49
+4,Chicken Breast,ShopRite of Newark,3.79
+5,Chicken Breast,ALDI,3.49
+6,Chicken Breast,Key Food Supermarket,4.19
+7,Chicken Breast,ShopRite of Camden,3.89
+8,Chicken Breast,ALDI,3.59
+9,Chicken Breast,Save-A-Lot,3.69
+1,Ground Beef,ShopRite of East Brunswick,5.99
+2,Ground Beef,ACME Markets,6.49
+3,Ground Beef,Wegmans,6.99
+4,Ground Beef,ShopRite of Newark,5.89
+5,Ground Beef,ALDI,5.49
+6,Ground Beef,Key Food Supermarket,6.29
+7,Ground Beef,ShopRite of Camden,5.79
+8,Ground Beef,ALDI,5.39
+9,Ground Beef,Save-A-Lot,5.49
+1,Bread,ShopRite of East Brunswick,1.49
+2,Bread,ACME Markets,1.69
+3,Bread,Wegmans,1.39
+4,Bread,ShopRite of Newark,1.29
+5,Bread,ALDI,1.19
+6,Bread,Key Food Supermarket,1.39
+7,Bread,ShopRite of Camden,1.49
+8,Bread,ALDI,1.09
+9,Bread,Save-A-Lot,1.19

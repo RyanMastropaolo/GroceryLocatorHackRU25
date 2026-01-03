@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_50e8a1917023a7bef21e8cb830538e83 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_50e8a1917023a7bef21e8cb830538e83" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_50e8a1917023a7bef21e8cb830538e83 = L.map(
+                "map_50e8a1917023a7bef21e8cb830538e83",
+                {
+                    center: [40.497346, -74.440088],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b127a2662da1f721a1c37d878e095292 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b127a2662da1f721a1c37d878e095292.addTo(map_50e8a1917023a7bef21e8cb830538e83);
+        
+    
+            var circle_marker_5b8e55021914e4d636e7b96da6b29540 = L.circleMarker(
+                [40.7282, -74.153],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_50e8a1917023a7bef21e8cb830538e83);
+        
+    
+        var popup_e419057d6292ef93f03a02cbba815233 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ae8ab99964fe4656196a38068c18423 = $(`<div id="html_3ae8ab99964fe4656196a38068c18423" style="width: 100.0%; height: 100.0%;">Store Name: ShopRite of Newark |  Ground Beef $5.89</div>`)[0];
+                popup_e419057d6292ef93f03a02cbba815233.setContent(html_3ae8ab99964fe4656196a38068c18423);
+            
+        
+
+        circle_marker_5b8e55021914e4d636e7b96da6b29540.bindPopup(popup_e419057d6292ef93f03a02cbba815233)
+        ;
+
+        
+    
+    
+            var circle_marker_ba0cb5c6534259c6acf6f27ca3dc750c = L.circleMarker(
+                [40.735, -74.227],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_50e8a1917023a7bef21e8cb830538e83);
+        
+    
+        var popup_e3013490bd5944aa43aa7d43315c5de9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21e7f9099ac78b22500ba785d4bb1c01 = $(`<div id="html_21e7f9099ac78b22500ba785d4bb1c01" style="width: 100.0%; height: 100.0%;">Store Name: ALDI |  Ground Beef $5.49</div>`)[0];
+                popup_e3013490bd5944aa43aa7d43315c5de9.setContent(html_21e7f9099ac78b22500ba785d4bb1c01);
+            
+        
+
+        circle_marker_ba0cb5c6534259c6acf6f27ca3dc750c.bindPopup(popup_e3013490bd5944aa43aa7d43315c5de9)
+        ;
+
+        
+    
+    
+            var circle_marker_a128b69c7acac30caa138f9a06f4ec20 = L.circleMarker(
+                [40.735, -74.227],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "cyan", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_50e8a1917023a7bef21e8cb830538e83);
+        
+    
+        var popup_1581b8102cd9eb9300f409b9b2a75c1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45bed95ea06517d7b7909e77021e8e6a = $(`<div id="html_45bed95ea06517d7b7909e77021e8e6a" style="width: 100.0%; height: 100.0%;">Store Name: Key Food Supermarket |  Ground Beef $6.29</div>`)[0];
+                popup_1581b8102cd9eb9300f409b9b2a75c1d.setContent(html_45bed95ea06517d7b7909e77021e8e6a);
+            
+        
+
+        circle_marker_a128b69c7acac30caa138f9a06f4ec20.bindPopup(popup_1581b8102cd9eb9300f409b9b2a75c1d)
+        ;
+
+        
+    
+</script>
+</html>

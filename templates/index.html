@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zipcode, Filter, Popular Products, and ID Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background: #f8f8f8;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .delete-button {
+            background-color: red;
+        }
+
+        .delete-button:hover {
+            background-color: darkred;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-item {
+            text-align: center;
+            width: 30%;
+            margin-bottom: 20px;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- COMBINED FORM FOR PRODUCT & ZIPCODE SELECTION -->
+<div class="container">
+    <h2>Select a Product and Enter Your Zipcode</h2>
+    <form action="/submit-selection" method="POST">
+        <!-- ZIPCODE SELECTION -->
+        <h3>Enter Your Zipcode</h3>
+        <label for="zipcode">Select Zipcode:</label>
+        <select id="zipcode" name="zipcode" required>
+            <option value="8854">8854</option>
+            <option value="7102">7102</option>
+            <option value="8102">8102</option>
+        </select>
+
+
+
+        <!-- PRODUCT SELECTION -->
+        <h3>Popular Products</h3>
+        <div class="product-list">
+            <label class="product-item">
+                <input type="radio" name="product" value="Milk" required>
+                <img src="{{ url_for('static', filename='images/milk.webp') }}" alt="Milk">
+                <div>Milk</div>
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="Banana">
+                <img src="{{ url_for('static', filename='images/banana.avif') }}" alt="Milk">
+                <div>Bananas</div>
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="Avocado">
+                <img src="{{ url_for('static', filename='images/Avocado-fruits.webp') }}" alt="Milk">
+                <div>Avocado</div>
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="Chicken Breast">
+                <img src="{{ url_for('static', filename='images/chicken breast.webp') }}" alt="Milk">
+                <div>Chicken Breast</div>
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="Ground Beef">
+                <img src="{{ url_for('static', filename='images/ground beef.jpeg') }}" alt="Milk">
+                <div>Ground Beef</div>
+            </label>
+            <label class="product-item">
+                <input type="radio" name="product" value="Bread">
+                <img src="{{ url_for('static', filename='images/bread.jpg') }}" alt="Milk">
+                <div>Bread</div>
+            </label>
+        </div>
+
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+
+    <!-- FILTER SECTION -->
+    <div class="container">
+        <h2>Find a Product</h2>
+        <div>
+            <input type="text" id="itemInput" placeholder="Enter an item...">
+            <button onclick="findProduct()">Search</button>
+        </div>
+
+        <ul id="itemsList"></ul>
+    </div>
+
+    <script>
+        // ZIPCODE FORM SCRIPT
+        document.getElementById("zipcodeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const zipcode = document.getElementById("zipcode").value;
+            const messageElement = document.getElementById("message");
+
+            messageElement.textContent = `Zipcode ${zipcode} submitted successfully!`; // CHANGE THIS TO NARROW DOWN SUPERMARKETS IN SELECTED ZIPCODE
+            messageElement.style.color = "green";
+        });
+
+        // ID SELECT SCRIPT
+        function sendID(id) {
+            fetch("/process", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ selectedID: id })
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.open();
+                document.write(data);
+                document.close();
+            })
+            .catch(error => console.error("Error:", error));
+        }
+
+        // FILTER SCRIPT
+        let items = [];
+
+        function findProduct() {
+            const inputField = document.getElementById("itemInput");
+            const productName = inputField.value.trim().toLowerCase();
+
+            if (productName !== "") {
+                const url = `https://www.yourdatabase.com/product/${productName}`;
+                window.location.href = url; // Redirects to the product page
+            }
+        }
+
+        function deleteTask(index) {
+            items.splice(index, 1);
+            renderList();
+        }
+
+        function renderList() {
+            const listElement = document.getElementById("itemsList");
+            listElement.innerHTML = ""; // Clear existing items
+
+            items.forEach((item, index) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    <span>${item}</span>
+                    <button class="delete-button" onclick="deleteTask(${index})">Delete</button>
+                `;
+                listElement.appendChild(listItem);
+            });
+        }
+
+        document.getElementById("itemInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                findProduct();
+            }
+        });
+
+        // PRODUCT BUTTON CLICK HANDLER
+        function viewProduct(productName, id) {
+            const url = `https://www.yourdatabase.com/product/${productName.toLowerCase()}?id=${id}`;
+            window.location.href = url; // Redirects to the product page with ID parameter
+        }
+    </script>
+
+</body>
+
+</html>
